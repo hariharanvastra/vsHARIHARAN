@@ -41,26 +41,26 @@ public class Assignment {
 		System.out.println("your addition is :"+addval);
 
 		System.out.println("Enter two numbers for subtract");
-    	        int num2=user.nextInt();
-	        int num3=user.nextInt();		
-		int subval=obj.subtract(num2,num3);
+    	        int num3=user.nextInt();
+	        int num4=user.nextInt();		
+		int subval=obj.subtract(num3,num4);
 		System.out.println("your subtraction is :"+subval);
 
 	        System.out.println("Enter two numbers for multiple");
-    	        int num4=user.nextInt();
- 	        int num5=user.nextInt();
-		int mulval=obj.multiple(num4,num5);
+    	        int num5=user.nextInt();
+ 	        int num6=user.nextInt();
+		int mulval=obj.multiple(num5,num6);
 		System.out.println("your multiple is :"+mulval);
 
 		System.out.println("Enter two numbers for division");
-    	        int num6=user.nextInt();
-	        int num7=user.nextInt();
-		int divval=obj.division(num6,num7);
+    	        int num7=user.nextInt();
+	        int num8=user.nextInt();
+		int divval=obj.division(num7,num8);
 		System.out.println("your division is :"+divval);
 
 		System.out.println("Enter a number for power");
-                int num8=user.nextInt();
-		int powerval=obj.power(num8);
+                int num9=user.nextInt();
+		int powerval=obj.power(num9);
 		System.out.println("your power value is :"+powerval);
 		
 		
