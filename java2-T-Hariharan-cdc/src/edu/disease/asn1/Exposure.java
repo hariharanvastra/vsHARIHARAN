@@ -118,16 +118,17 @@ public class Exposure {
 			return false;
 		return true;
 	}
-
 	/**
 	 * 
 	 * Create a toString method using the patientId,and dateTime.
 	 * 
 	 */
-
+	
 	@Override
 	public String toString() {
 		return "Exposure [patientId=" + patientId + ", dateTime=" + dateTime + ", exposureType=" + exposureType + "]";
 	}
+	
+	
 
 }

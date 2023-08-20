@@ -85,46 +85,33 @@ public class Patient {
 	public UUID getPatientId() {
 		return patientId;
 	}
-
 	/**
-	 * @return firstName Provide getter method for firstName property.
+	 * @return firstName
+	 * Provide getter method for firstName property.
 	 */
 	public String getFirstName() {
 		return firstName;
 	}
-
 	/**
-	 * @return lastName Provide getter method for lastName property.
+	 * @return lastName
+	 * Provide getter method for lastName property.
 	 */
 	public String getLastName() {
 		return lastName;
 	}
 
-	/**
-	 * @param patientId Provide setter method for lastName property.
-	 */
 	public void setPatientId(UUID patientId) {
 		this.patientId = patientId;
 	}
 
-	/**
-	 * @param firstName Provide setter method for firstName property.
-	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
-	/**
-	 * @param lastName Provide setter method for lastName property.
-	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
-	/**
-	 * Create a hash Code method using the patientId property as the field that
-	 * makes this class unique.
-	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -133,11 +120,6 @@ public class Patient {
 		return result;
 	}
 
-	/**
-	 * 
-	 * Create a equals Code method using the patientId property as the field that
-	 * makes this class unique.
-	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -155,10 +137,6 @@ public class Patient {
 		return true;
 	}
 
-	/**
-	 * 
-	 * Create a toString method that includes all the properties.
-	 */
 	@Override
 	public String toString() {
 		return "Patient [firstName=" + firstName + ", lastName=" + lastName + ", exposures="

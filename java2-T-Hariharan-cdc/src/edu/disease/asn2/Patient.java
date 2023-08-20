@@ -11,10 +11,10 @@ import edu.disease.asn1.Exposure;
  * diseaselds
  */
 
-public class Patient implements Comparable<Patient>{
+public class Patient implements Comparable<Patient> {
 	UUID patientId;
-	private String firstName;
-	private String lastName;
+	String firstName;
+	String lastName;
 	Exposure[] exposures;
 	UUID[] diseaseIds;
 
@@ -24,9 +24,9 @@ public class Patient implements Comparable<Patient>{
 	 * @param maxDiseases
 	 * @param maxExposures
 	 * 
-	 *                     Your constructor should throw an IllegalArgumentException
-	 *                     with the appropriate message if the maxDiseases or
-	 *                     maxExposure values cannot be used to initiate the arrays.
+	 * Your constructor should throw an IllegalArgumentException
+	 * with the appropriate message if the maxDiseases or
+	 * maxExposure values cannot be used to initiate the arrays.
 	 */
 	public Patient(int maxDiseases, int maxExposures) {
 		if (maxDiseases > 0) {
@@ -45,7 +45,7 @@ public class Patient implements Comparable<Patient>{
 	}
 
 	/**
-	 * @param diseaseId Provide an addDiseaseld method that returns void and accepts
+	 * @param diseaseId, Provide an addDiseaseld method that returns void and accepts
 	 *                  a UUID argument. This method will add the supplied diseaseld
 	 *                  to the diseaselds array. Throw an IndexOutOfBoundsException
 	 *                  with the appropriate message if the diseaselds array is
@@ -63,7 +63,7 @@ public class Patient implements Comparable<Patient>{
 	}
 
 	/**
-	 * @param exposure Provide an addExposure method that returns void and accepts
+	 * @param exposure ,Provide an addExposure method that returns void and accepts
 	 *                 an Exposure argument. This method will add the supplied
 	 *                 exposure to the exposures array. Throw an
 	 *                 IndexOutOfBoundsException with the appropriate message if the
@@ -82,50 +82,48 @@ public class Patient implements Comparable<Patient>{
 	}
 
 	/**
-	 * @return patientId Provide getter method for patientId property.
+	 * @return patientId ,Provide getter method for patientId property.
 	 */
 	public UUID getPatientId() {
 		return patientId;
 	}
 
 	/**
-	 * @return firstName Provide getter method for firstName property.
+	 * @return firstName ,Provide getter method for firstName property.
 	 */
 	public String getFirstName() {
 		return firstName;
 	}
 
 	/**
-	 * @return lastName Provide getter method for lastName property.
+	 * @return lastName ,Provide getter method for lastName property.
 	 */
 	public String getLastName() {
 		return lastName;
 	}
 
 	/**
-	 * @param patientId Provide setter method for lastName property.
+	 * @param patientId ,Provide setter method for patientId property.
 	 */
 	public void setPatientId(UUID patientId) {
 		this.patientId = patientId;
 	}
 
 	/**
-	 * @param firstName Provide setter method for firstName property.
+	 * @param firstName ,Provide setter method for patientId property.
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
 	/**
-	 * @param lastName Provide setter method for lastName property.
+	 * @return lastName ,Provide getter method for lastName property.
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
 	/**
-	 * Create a hash Code method using the patientId property as the field that
-	 * makes this class unique.
+	 * Provide hashCode method for patientId property.
 	 */
 	@Override
 	public int hashCode() {
@@ -134,11 +132,8 @@ public class Patient implements Comparable<Patient>{
 		result = prime * result + ((patientId == null) ? 0 : patientId.hashCode());
 		return result;
 	}
-
 	/**
-	 * 
-	 * Create a equals Code method using the patientId property as the field that
-	 * makes this class unique.
+	 * Provide equals method for patientId property.
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -156,10 +151,8 @@ public class Patient implements Comparable<Patient>{
 			return false;
 		return true;
 	}
-
 	/**
-	 * 
-	 * Create a toString method that includes all the properties.
+	 * Provide toString method for patientId property.
 	 */
 	@Override
 	public String toString() {
@@ -168,15 +161,18 @@ public class Patient implements Comparable<Patient>{
 				+ patientId + "]";
 	}
 
-	
+	/**
+	 * 
+	 * Patient class to allow it to be sortable in ascending order by the last name,
+	 * then first name. Sorting should be case insensitive.
+	 */
 	@Override
 	public int compareTo(Patient o) {
-		if (o.lastName.compareToIgnoreCase(this.lastName) != 0) {
-			return o.lastName.compareToIgnoreCase(this.lastName);
+		if (this.lastName.compareTo(o.lastName) != 0) {
+			return this.lastName.compareTo(o.lastName);
 		} else {
-			return o.firstName.compareToIgnoreCase(this.firstName);
+			return this.firstName.compareTo(o.firstName);
 		}
 	}
+
 }
-
-
