@@ -1,17 +1,21 @@
-package edu.disease.asn1;
+package edu.disease.asn3;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
  * 
- *  A Disease with the following properties:
+ * A Disease with the following properties:
  * <li>
  * java.util.UUID
  * diseaseld String name
  * <li>
  */
- 
-public class Disease {
+public abstract class Disease implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private UUID diseaseId;
 	private String name;
 
@@ -90,5 +94,8 @@ public class Disease {
 	public String toString() {
 		return "Disease [name=" + name + ", diseaseId=" + diseaseId + "]";
 	}
-
+	
+	
+   public abstract String[] getExamples();
+   
 }

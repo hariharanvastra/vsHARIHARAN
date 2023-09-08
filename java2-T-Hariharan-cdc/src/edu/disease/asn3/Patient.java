@@ -1,9 +1,8 @@
-package edu.disease.asn2;
+package edu.disease.asn3;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.UUID;
-
-import edu.disease.asn1.Exposure;
 
 /**
  * A Patient with the following properties
@@ -16,12 +15,16 @@ import edu.disease.asn1.Exposure;
  * <li>
  */
 
-public class Patient implements Comparable<Patient>{
+public class Patient implements Comparable<Patient>,Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private UUID patientId;
 	private String firstName;
 	private String lastName;
-	 Exposure[] exposures;
-	UUID[] diseaseIds;
+	Exposure[] exposures;
+	 UUID[] diseaseIds;
 
 	/**
 	 * Create a single constructor that accepts two parameters.
@@ -79,11 +82,11 @@ public class Patient implements Comparable<Patient>{
 	public void addExposure(Exposure exposure) {
 		if (index1 < exposures.length) {
 			exposures[index1] = exposure;
-			index1++;
+			index1++; 
 		} else {
 			throw new IndexOutOfBoundsException(" exposures array's Memory Full...");
 		}
-
+ 
 	}
 
 	/**

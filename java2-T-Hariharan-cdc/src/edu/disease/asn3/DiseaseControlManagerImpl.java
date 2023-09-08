@@ -1,8 +1,8 @@
-package edu.disease.asn2;
+package edu.disease.asn3;
 
 import java.util.UUID;
 
-import edu.disease.asn1.Exposure;
+
 
 public class DiseaseControlManagerImpl implements DiseaseControlManager {
 
@@ -24,11 +24,11 @@ public class DiseaseControlManagerImpl implements DiseaseControlManager {
 		}
 	}
 
-	int index;
+	int index = 0;
 
 	@Override
 	public Disease addDisease(String name, boolean infectious) {
-		index=0;
+
 		if (index < diseases.length) {
 			if (infectious) {
 				return diseases[index++] = new InfectiousDisease();
@@ -39,25 +39,25 @@ public class DiseaseControlManagerImpl implements DiseaseControlManager {
 		} else {
 			throw new IllegalStateException("No more Disease can be Added !");
 		}
+
 	}
-	
+
 	@Override
 	public Disease getDisease(UUID diseaseId) {
-		
-		for (Disease dis:diseases) {
-			if (dis.getDiseaseId().equals(diseaseId)) {
-				return dis; 
+		int i = 0;
+		while (i < diseases.length) {
+			if (diseases[i].getDiseaseId() == diseaseId) {
+				return diseases[i];
 			}
 		}
 		return null;
 
 	}
 
-	int indexOfP;
+	int indexOfP = 0;
 
 	@Override
 	public Patient addPatient(String firstName, String lastName, int maxDisease, int maxExposure) {
-		 indexOfP=0;
 		if (indexOfP < patients.length) {
 			patients[indexOfP] = new Patient(maxDisease, maxExposure);
 			patients[indexOfP].setFirstName(firstName);
@@ -74,7 +74,7 @@ public class DiseaseControlManagerImpl implements DiseaseControlManager {
 	public Patient getPatient(UUID patientId) {
 		int i = 0;
 		while (i < patients.length) {
-			if (patients[i].getPatientId() == patientId) {
+			if (patients[i].getPatientId() == patientId) { 
 				return patients[i];
 			}
 		}
@@ -102,6 +102,18 @@ public class DiseaseControlManagerImpl implements DiseaseControlManager {
 			throw new IllegalArgumentException("No patient found..give valid paitentId");
 		}
 		patient.addExposure(exposure);
+	}
+
+	@Override
+	public Disease[] getDiseases() {
+		
+		return diseases;
+	}
+
+	@Override
+	public Patient[] getPatients() {
+		
+		return patients;
 	}
 
 }

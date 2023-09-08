@@ -4,13 +4,18 @@ import java.util.Arrays;
 import java.util.UUID;
 
 /**
- * Create a class called, Patient, with the following properties java.util.UUID
- * patientld String firstName String lastName Exposure[] exposures UUID[]
- * diseaselds
+ * A Patient with the following properties
+ * <li>
+ * java.util.UUID patientld
+ * String firstName 
+ * String lastName 
+ * Exposure[] exposures 
+ * UUID[] diseaselds
+ * <li>
  */
 
 public class Patient {
-	UUID patientId;
+	private UUID patientId;
 	private String firstName;
 	private String lastName;
 	Exposure[] exposures;
@@ -85,41 +90,75 @@ public class Patient {
 	public UUID getPatientId() {
 		return patientId;
 	}
+
 	/**
-	 * @return firstName
-	 * Provide getter method for firstName property.
+	 * @return patientId Provide getter method for patientId property.
+	 */
+	public Exposure[] getExposures() {
+		return exposures;
+	}
+
+	/**
+	 * @return firstName Provide getter method for firstName property.
 	 */
 	public String getFirstName() {
 		return firstName;
 	}
+
+	public UUID[] getDiseaseIds() {
+		return diseaseIds;
+	}
 	/**
-	 * @return lastName
-	 * Provide getter method for lastName property.
+	 * @return lastName Provide getter method for lastName property.
 	 */
 	public String getLastName() {
 		return lastName;
 	}
+	public void setExposures(Exposure[] exposures) {
+		this.exposures = exposures;
+	}
 
+	public void setDiseaseIds(UUID[] diseaseIds) {
+		this.diseaseIds = diseaseIds;
+	}
+	/**
+	 * @param patientId Provide setter method for lastName property.
+	 */
 	public void setPatientId(UUID patientId) {
 		this.patientId = patientId;
 	}
 
+	/**
+	 * @param firstName Provide setter method for firstName property.
+	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
+	/**
+	 * @param lastName Provide setter method for lastName property.
+	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
+	/**
+	 * Create a hash Code method using the patientId property as the field that
+	 * makes this class unique.
+	 */ 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((patientId == null) ? 0 : patientId.hashCode());
 		return result;
-	}
+	} 
 
+	/**
+	 * 
+	 * Create a equals Code method using the patientId property as the field that
+	 * makes this class unique.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -137,6 +176,10 @@ public class Patient {
 		return true;
 	}
 
+	/**
+	 * 
+	 * Create a toString method that includes all the properties.
+	 */
 	@Override
 	public String toString() {
 		return "Patient [firstName=" + firstName + ", lastName=" + lastName + ", exposures="

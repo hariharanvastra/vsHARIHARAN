@@ -4,12 +4,16 @@ import java.util.UUID;
 
 /**
  * 
- * Create a class called, Disease, with the following properties: java.util.UUID
- * diseaseld String name
+ *  A Disease with the following properties:
+ * <li>
+ * java.util.UUID
+ * diseaseld String name 
+ * <li>
  */
+ 
 public abstract class Disease {
-	UUID diseaseId;
-	String name;
+	private UUID diseaseId;
+	private String name;
 
 	/**
 	 * @return name Provide getter method for the name property.
@@ -32,7 +36,7 @@ public abstract class Disease {
 	 * @param name Provide setter method for the name property.
 	 * 
 	 */
-	public void setName(String name) {
+	public void  setName(String name) {
 		this.name = name;
 	}
 

@@ -1,5 +1,6 @@
-package edu.disease.asn1;
+package edu.disease.asn3;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -7,12 +8,17 @@ import java.util.UUID;
  * 
  * 
  * A Exposure represent with the following properties:
- * <li>java.util.UUID patientld java.time.LocalDateTime dateTime String
- * exposureType
  * <li>
- * 
+ * java.util.UUID patientld 
+ * java.time.LocalDateTime dateTime 
+ * String exposureType
+ * <li>
  */
-public class Exposure {
+public class Exposure implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private UUID patientId;
 	private LocalDateTime dateTime;
 	private String exposureType;
@@ -25,13 +31,15 @@ public class Exposure {
 	 *                     property.
 	 * 
 	 * 
-	 */
-	public Exposure(UUID patientId) {
-		this.patientId = patientId;
+	 */ 
+	public Exposure(LocalDateTime dateTime, String exposureType) {
+
+		setDateTime(dateTime);
+		setExposureType(exposureType);
 	}
 
 	/**
-	 * @return the patientId Provide a getter method for the patientId property.
+	 * @return the patientId ,Provide a getter method for the patientId property.
 	 * 
 	 */
 	public UUID getPatientId() {
@@ -39,7 +47,7 @@ public class Exposure {
 	}
 
 	/**
-	 * @return the dateTime Provide a getter method for the dateTime property.
+	 * @return the dateTime ,Provide a getter method for the dateTime property.
 	 * 
 	 */
 	public LocalDateTime getDateTime() {
@@ -47,7 +55,7 @@ public class Exposure {
 	}
 
 	/**
-	 * @return the exposureType Provide a getter method for the exposureType
+	 * @return the exposureType, Provide a getter method for the exposureType
 	 *         property.
 	 * 
 	 */
@@ -56,14 +64,14 @@ public class Exposure {
 	}
 
 	/**
-	 * @param dateTime Provide a setter method for the dateTime property.
+	 * @param dateTime ,Provide a setter method for the dateTime property.
 	 */
 	public void setDateTime(LocalDateTime dateTime) {
 		this.dateTime = dateTime;
 	}
 
 	/**
-	 * @param dateTime Provide a setter method for the ExposureType property. The
+	 * @param dateTime ,Provide a setter method for the ExposureType property. The
 	 *                 exposure Type property should only be allowed to accept the
 	 *                 values, "D" for direct exposure or "I" for indirect exposure.
 	 *                 Throw an IllegalArgumentException with the appropriate
@@ -71,14 +79,11 @@ public class Exposure {
 	 *                 exposure type is not "D” and not “I”.
 	 */
 	public void setExposureType(String exposureType) {
-		
 		if (exposureType.equals("D") || exposureType.equals("I")) {
 			this.exposureType = exposureType;
 		} else {
 			throw new IllegalArgumentException("D and I only allows");
 		}
-		
-		
 
 	}
 
@@ -101,7 +106,7 @@ public class Exposure {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj) 
+		if (this == obj)
 			return true;
 		if (obj == null)
 			return false;
